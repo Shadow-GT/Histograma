@@ -9,14 +9,16 @@ function generarHistogramaTexto(arr) {
         }
     });
 
-    let resultado = '';
+    const histogramaTexto = {};
     for (let clave in histograma) {
-        resultado += `${clave}: ${'*'.repeat(histograma[clave])}\n`;
+        histogramaTexto[clave] = '*'.repeat(histograma[clave]);
     }
 
-    return resultado.trim();
+    return histogramaTexto;
 }
 
 const numeros = [1, 2, 3, 1, 2, 3, 4, 1, 5];
 const histogramaTexto = generarHistogramaTexto(numeros);
 console.log(histogramaTexto);
+// Imprime: { '1': '***', '2': '**', '3': '**', '4': '*', '5': '*' }
+
